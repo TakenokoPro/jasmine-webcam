@@ -1,0 +1,35 @@
+{
+  "name": "jasmine-webcam",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TakenokoPro/jasmine-webcam.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TakenokoPro/jasmine-webcam/issues"
+  },
+  "homepage": "https://github.com/TakenokoPro/jasmine-webcam#readme",
+  "dependencies": {
+    "babel-preset-es2015": "^6.16.0",
+    "babelify": "^7.3.0",
+    "browserify": "^13.1.0",
+    "gulp": "^3.9.1",
+    "gulp-plumber": "^1.1.0",
+    "gulp-postcss": "^6.2.0",
+    "gulp-sass": "^2.3.2",
+    "gulp-webserver": "^0.9.1",
+    "jquery": "^3.1.1",
+    "postcss-cssnext": "^2.8.0",
+    "vinyl-source-stream": "^1.1.0"
+  }
+}

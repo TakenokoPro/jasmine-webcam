@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>jasmine-webcam</title>
+  <meta name="description" content="supported by jasmine team">
+  <meta name="author" content="jasmine team">
+
+  <!-- Load Stylesheet -->
+  <link rel="stylesheet" href="./css/index.css">
+
+  <!-- Load Script -->
+
+  <script src="./js/index.js"></script>
+</head>
+
+<body>
+  <button id="startVideo">Start</button>
+  <br />
+  <video id="local_video" autoplay style="width: 320px; height: 240px; border: 1px solid black;"></video>
+  
+  <script type="text/javascript">
+    let localVideo = document.getElementById('local_video');
+    let localStream;
+  </script>
+  <script src="./lib/js/jquery.min.js"></script>
+</body>
