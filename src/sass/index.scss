@@ -1,3 +1,16 @@
-a {
-  
+#camera_body {
+  #camera_video {
+    width: 320px;
+    height: 240px;
+    border: 1px solid black;
+  }
+  #camera_img{
+    width: 320px;
+    height: 240px;
+  }
+  #camera_canvas{
+    width: 320px;
+    height: 240px;
+    display: none;
+  }
 }
