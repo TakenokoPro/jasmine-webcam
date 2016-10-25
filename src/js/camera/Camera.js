@@ -10,6 +10,9 @@ export default class Camera {
     this.localMediaStream = null;
   }
 
+  /**
+   * カメラのセットアップ
+  */
   startVideo() {
 
     // 初期化
@@ -22,7 +25,7 @@ export default class Camera {
     
     // サポート外
     if (!navigator.getUserMedia) {
-      console.log("getUserMedia() not supported.");
+      console.error("getUserMedia() not supported.");
       return;
     }
 
@@ -47,6 +50,7 @@ export default class Camera {
       this.image.src = this.canvas.toDataURL('image/jpeg');
       console.log("TAKE SNAP SHOT")
     }
+    return this.image.src || "";
   }
 
 }

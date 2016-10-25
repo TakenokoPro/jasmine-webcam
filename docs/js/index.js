@@ -22,6 +22,11 @@ var Camera = function () {
     this.localMediaStream = null;
   }
 
+  /**
+   * カメラのセットアップ
+  */
+
+
   _createClass(Camera, [{
     key: 'startVideo',
     value: function startVideo() {
@@ -37,7 +42,7 @@ var Camera = function () {
 
       // サポート外
       if (!navigator.getUserMedia) {
-        console.log("getUserMedia() not supported.");
+        console.error("getUserMedia() not supported.");
         return;
       }
 
@@ -63,6 +68,7 @@ var Camera = function () {
         this.image.src = this.canvas.toDataURL('image/jpeg');
         console.log("TAKE SNAP SHOT");
       }
+      return this.image.src || "";
     }
   }]);
 
@@ -84,10 +90,13 @@ var camera = new _Camera2.default();
 
 // 実行したい処理
 window.onload = function () {
+
   console.log("load");
+
   jQuery('#startVideo').click(function () {
     camera.startVideo();
   });
+
   jQuery('#takeSnapshot').click(function () {
     camera.takeSnapshot();
   });
