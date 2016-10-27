@@ -10,8 +10,11 @@
   <link rel="stylesheet" href="./css/index.css">
 
   <!-- Load Script -->
-  <script src="./lib/js/jquery.min.js"></script>
-  <script src="./js/index.js"></script>
+  <script type="text/javascript" src="./scripts/jquery.min.js"></script>
+  <script type="text/javascript" src="./scripts/barcode/JOB.js"></script>
+  <script type="text/javascript" src="./js/index.js"></script>
+  <!--script data-main="./js/index.js" src="./scripts/require.js"></script-->
+  
 </head>
 
 <body>
@@ -22,4 +25,11 @@
     <img id="camera_img" src="" width="320" height="240">
     <canvas id="camera_canvas" width="320" height="240"></canvas>
   </div>
+  <!--script src="https://www.googleapis.com/books/v1/volumes?q=harry+potter&callback=handleResponse"></script-->
+  <div id="container">
+  <canvas width="320" height="240" id="picture"></canvas>
+  <input id="Take-Picture" type="file" accept="image/*;capture=camera" />
+  <p id="textbit"></p>
+  </div>
+
 </body>

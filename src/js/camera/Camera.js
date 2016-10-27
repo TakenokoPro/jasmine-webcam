@@ -1,4 +1,4 @@
-// start local video
+// Camera Class
 
 export default class Camera {
 
