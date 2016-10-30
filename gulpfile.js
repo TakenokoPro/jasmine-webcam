@@ -5,10 +5,12 @@ var path = {
   'htmlPath': 'src',
   'sassPath': 'src/sass',
   'jsPath': 'src/js',
+  'libPath': 'src/lib',
 
   'htmlBuildPath': 'docs', // 例）'htdocs/images'
   'cssBuildPath': 'docs/css', // 例）'htdocs/stylesheets'
   'jsBuildPath': 'docs/js', // 例）'htdocs/stylesheets'
+  'libBuildPath': 'docs/lib', // 例）'htdocs/stylesheets'
 }
 
 // 使用パッケージ
@@ -50,6 +52,13 @@ gulp.task('js', function(){
   .pipe(gulp.dest(path.jsBuildPath + '/'));
 });
 
+gulp.task( 'copyLib', function() {
+  gulp.src( 'src/lib/css/*.css' ).pipe( gulp.dest( 'docs/lib/css'  ) );
+  gulp.src( 'src/lib/js/*.js' ).pipe( gulp.dest( 'docs/lib/js'  ) );
+  gulp.src( 'src/lib/index.css' ).pipe( gulp.dest( 'docs/lib'  ) );
+  gulp.src( 'src/lib/index.js' ).pipe( gulp.dest( 'docs/lib'  ) );
+} );
+
 // Sassをコンパイルし、ベンダープレフィックスを付与
 gulp.task('scss', function() {
   var processors = [
@@ -66,7 +75,8 @@ gulp.task('watch', function() {
   gulp.watch(path.htmlPath + '/**/*.html', ['html']);
   gulp.watch(path.sassPath + '/**/*.scss', ['scss']);
   gulp.watch(path.jsPath + '/**/*.js',['js']);
+  gulp.watch(path.libPath + '/**/*',['copyLib']);
 });
 
 // タスク実行
-gulp.task('default', ['webserver','html','js','scss','watch']); // デフォルト実行
+gulp.task('default', ['webserver','html','js','scss','copyLib','watch']); // デフォルト実行

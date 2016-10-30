@@ -10,8 +10,10 @@
   <link rel="stylesheet" href="./css/index.css">
 
   <!-- Load Script -->
-  <script src="./lib/js/jquery.min.js"></script>
-  <script src="./js/index.js"></script>
+  <script type="text/javascript" src="./lib/js/jquery.min.js"></script>
+  <script type="text/javascript" src="./lib/js/quagga.min.js"></script>
+  <!-- script type="text/javascript" src="./lib/js/live_w.js"></script -->
+  <script type="text/javascript" src="./js/index.js"></script>
 </head>
 
 <body>
@@ -22,4 +24,42 @@
     <img id="camera_img" src="" width="320" height="240">
     <canvas id="camera_canvas" width="320" height="240"></canvas>
   </div>
+
+<!-- ------------------------------------------------ -->
+ <h3>The user's camera</h3>
+        <p>If your platform supports the <strong>getUserMedia</strong> API call, you can try the real-time locating and decoding features.
+            Simply allow the page to access your web-cam and point it to a barcode. You can switch between <strong>Code128</strong>
+            and <strong>EAN</strong> to test different scenarios.
+            It works best if your camera has built-in auto-focus.
+            </p>
+        <div class="controls">
+            <fieldset class="input-group">
+                <button class="stop">Stop</button>
+            </fieldset>
+            <fieldset class="reader-config-group">
+                <label>
+                    <span>Barcode-Type</span>
+                    <select name="decoder_readers">
+                        <option value="code_128">Code 128</option>
+                        <option value="code_39">Code 39</option>
+                        <option value="code_39_vin">Code 39 VIN</option>
+                        <option value="ean" selected="selected">EAN</option>
+                        <option value="ean_extended">EAN-extended</option>
+                        <option value="ean_8">EAN-8</option>
+                        <option value="upc">UPC</option>
+                        <option value="upc_e">UPC-E</option>
+                        <option value="codabar">Codabar</option>
+                        <option value="i2of5">ITF</option>
+                    </select>
+                </label>
+            </fieldset>
+        </div>
+
+  <!-- バーコード読み込み -->
+  <div id="result_strip">
+    <ul class="thumbnails"></ul>
+    <ul class="collector"></ul>
+  </div>
+  <div id="interactive" class="viewport"></div>
+
 </body>
